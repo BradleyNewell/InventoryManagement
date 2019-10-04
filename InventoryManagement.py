@@ -4,8 +4,8 @@ import re
 read_file = open("words.txt", 'r')
 write_file = open("saved_items.txt", 'a+')
 blank = ''
-for i in read_file:
-    blank += i
+for line in read_file:
+    blank += line
 
 
 def random_word():
@@ -14,10 +14,12 @@ def random_word():
 
 
 def assignment(item_name):
-    item = ''
-    for i in range(4):
-        item += random_word()
-        item += ' '
-    write_file.write(item_name + ': ' + item)
+    store = {}
+    identifier = ''
+    for words in range(4):
+        identifier += random_word()
+        identifier += ' '
+    store.update({identifier.lower(): item_name})
+    write_file.write(str(store) + '\n')
 
 assignment('Book')
