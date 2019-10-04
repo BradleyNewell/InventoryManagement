@@ -19,7 +19,10 @@ def assignment(item_name):
     for words in range(4):
         identifier += random_word()
         identifier += ' '
-    store.update({identifier.lower(): item_name})
-    write_file.write(str(store) + '\n')
+    if identifier not in write_file:
+        store.update({identifier.lower(): item_name})
+        write_file.write(str(store) + '\n')
+    else:
+        assignment(item_name)
 
 assignment('Book')
