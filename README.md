@@ -9,7 +9,10 @@ Basic Guide:
 In order to change the text the words are pulled from, see line 4 and change the 1st argument to the file name you wish to use.
 Similarly to change the file name you wish to write to or to write to an existing file please change the 1st argument on line 5.
 
-To change the amount of words returned, please change the value in line 18 to desired.
+To change the amount of words returned, please change the value in line 19 to desired.
+
 
 please note, this software will most likely be an evolving project and some features may change and some new ones will inevitably be
 added.
+
+-Update: Added recursion so if the assignment identifier is already inside the file to be appended (write_file) the assignment function will then call itself and try again.
